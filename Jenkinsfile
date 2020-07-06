@@ -2,11 +2,11 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        /*stage('Build') { 
             steps {
                 sh './jenkins/run_maven_build.sh'
             }
-        }
+        }*/
         stage('Dependency-Check') { 
             steps {
                 script {
