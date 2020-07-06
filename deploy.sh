@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-#编译+部署order站点
+
+rder站点
 
 #需要配置如下参数
 # 项目路径, 在Execute Shell中配置项目路径, pwd 就可以获得该项目路径
@@ -20,26 +20,20 @@ killTomcat()
       kill -9 $pid
     fi
 }
-cd $PROJ_PATH/order
-mvn clean install
 
 # 停tomcat
 killTomcat
 
 # 删除原有工程
-rm -rf $TOMCAT_APP_PATH/webapps/ROOT
-rm -f $TOMCAT_APP_PATH/webapps/ROOT.war
-rm -f $TOMCAT_APP_PATH/webapps/order.war
+rm -f /webapps/tomcat/apache-tomcat-9.0.30/webapps/todolist-3.0.5-SNAPSHOT.war
 
 # 复制新的工程
-cp $PROJ_PATH/order/target/order.war $TOMCAT_APP_PATH/webapps/
-
-cd $TOMCAT_APP_PATH/webapps/
-mv order.war ROOT.war
+cp /var/lib/jenkins/workspace/DEMO_01_master/target/todolist-3.0.5-SNAPSHOT.war /webapp/tomcat/apache-tomcat-9.0.30/webapps/
 
 # 启动Tomcat
-cd $TOMCAT_APP_PATH/
+cd /webapp/tomcat/apache-tomcat-9.0.30/
 sh bin/startup.sh
+
 
 
 
