@@ -7,7 +7,6 @@ pipeline {
                 sh './jenkins/run_maven_build.sh'
             }
         }
-         stages {
         stage('Dependency-Check') { 
             steps {
                 script {
@@ -21,5 +20,4 @@ pipeline {
             }
         }
     }
-} 
 }
