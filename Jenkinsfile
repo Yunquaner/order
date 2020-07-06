@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     dependencycheck additionalArguments: ' --project DEMO_01 --scan ./ --out Dependency-check-report.xml --format XML ' , odcInstallation: 'Owasp-Dependency-Check'
-                    dependencyCheckPublisher pattern: 'Dependency-check-report.xml' , UnstableTotalHigh: 50
+                    dependencyCheckPublisher pattern: 'Dependency-check-report.xml', unstableTotalHigh: 50
                 }
             }
         }
