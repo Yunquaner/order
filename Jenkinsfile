@@ -7,6 +7,9 @@ pipeline {
                 sh './jenkins/run_maven_build.sh'
             }
         }
+        stage("send-to-slack") {
+            slackSend color: '#BADA55', message: 'Hello, World!', channel: <Bo ru Li>
+        }
         stage('Dependency-Check') { 
             steps {
                 script {
