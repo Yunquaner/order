@@ -3,7 +3,9 @@ pipeline {
     agent any 
     stages {
         stage('send-to-slack') {
-            slackSend channel: 'Bo ru Li', message: 'build start', teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf'
+            steps {
+                slackSend channel: 'Bo ru Li', message: 'build start', teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf'
+            }
         }
         stage('Build') { 
             steps {
