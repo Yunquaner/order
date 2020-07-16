@@ -24,12 +24,10 @@ pipeline {
             steps {
                 sh './deploy.sh'
             }
-        }
-    catch (e) {
+    } catch (e) {
        currentBuild.result = "FAILED"
        throw e
-    } 
-    finally {
+    } finally {
        notifyBuild(currentBuild.result)
     }
 }
