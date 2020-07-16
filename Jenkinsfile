@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('send-to-slack') {
             steps {
-                slackSend channel: 'aflac', message: 'build start', teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf'
+                slackSend channel: 'aflac', color: '#439FE0', message: 'Build start', teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf'
             }
         }
         stage('Build') { 
