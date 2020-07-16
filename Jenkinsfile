@@ -25,11 +25,12 @@ pipeline {
                 sh './deploy.sh'
             }
         }
-    } catch (e) {
-      currentBuild.result = "FAILED"
-      throw e
-    } finally {
-      notifyBuild(currentBuild.result)
+    catch (e) {
+       currentBuild.result = "FAILED"
+       throw e
+    } 
+    finally {
+       notifyBuild(currentBuild.result)
     }
 }
 def notifyBuild(String buildStatus = 'STARTED') {
