@@ -1,9 +1,6 @@
 #!/usr/bin/env groovy
 pipeline {
     agent any 
-    stage("send-to-slack") {
-        slackSend channel: 'Bo ru Li', message: 'build start', teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf'
-    }
     stages {
         stage('Build') { 
             steps {
