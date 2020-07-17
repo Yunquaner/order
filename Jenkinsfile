@@ -14,10 +14,10 @@ pipeline {
         }
         stage('SonarQube analysis') {
             steps {
-            def scannerHome = tool 'SonarScanner 4.0';
-                withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'SonarQube') {
-                     sh "${scannerHome}/bin/sonar-scanner"
-                }
+                sh 'mvn sonar:sonar \
+                -Dsonar.projectKey=To_do_list \
+                -Dsonar.host.url=http://cnwbzp1068.cn.dst.ibm.com:9000/sonarqube \
+                -Dsonar.login=753fecef19555f2999245f0b8fdefb8aaf52f6c7'
             }
         }
         //stage('Dependency-Check') { 
