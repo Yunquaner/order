@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 pipeline {
     agent any 
-    //stages {
+    stages {
     //    stage('send-to-slack') {
     //        steps {
     //            slackSend channel: 'aflac', color: '#439FE0', message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)" , teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf', failOnError: true
