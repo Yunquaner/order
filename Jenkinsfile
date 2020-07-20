@@ -20,6 +20,11 @@ pipeline {
                 -Dsonar.login=753fecef19555f2999245f0b8fdefb8aaf52f6c7'
             }
         }
+        stage('send-to-slack') {
+            steps {
+               slackSend channel: 'aflac', color: '#439FE0', message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)" , teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf', failOnError: true
+            }
+        }
         //stage('Dependency-Check') { 
         //    steps {
         //        script {
