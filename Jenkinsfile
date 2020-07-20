@@ -2,11 +2,11 @@
 pipeline {
     agent any 
     stages {
-    //    stage('send-to-slack') {
-    //        steps {
-    //            slackSend channel: 'aflac', color: '#439FE0', message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)" , teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf', failOnError: true
-    //        }
-    //    }
+        stage('send-to-slack') {
+            steps {
+                slackSend channel: 'aflac', color: '#439FE0', message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)" , teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf', failOnError: true
+            }
+        }
         stage('Build') { 
             steps {
                 sh './jenkins/run_maven_build.sh'
