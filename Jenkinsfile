@@ -22,7 +22,7 @@ pipeline {
         }
         stage('send-to-slack') {
             steps {
-               slackSend channel: 'aflac', color: '#439FE0', message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)" , teamDomain: 'ibmcicchina', tokenCredentialId: 'Sarf', failOnError: true
+               slackSend channel: '#yy-sonar-slack', color: '#439FE0', message: "Project [To_do_list] analyzed. See http://cnwbzp1068.cn.dst.ibm.com:9000/sonarqube/dashboard?id=yy-test." , teamDomain: 'phcompanyworkspace', tokenCredentialId: 'Sera'
             }
         }
         //stage('Dependency-Check') { 
